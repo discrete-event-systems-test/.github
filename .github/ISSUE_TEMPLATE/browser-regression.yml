@@ -1,0 +1,50 @@
+name: DES browser regression
+description: Track a deployed DES route, gateway, or compatibility regression
+title: "[browser] "
+labels:
+  - bug
+body:
+  - type: dropdown
+    id: owner
+    attributes:
+      label: Contract owner
+      options:
+        - des-web-playwright-e2e
+        - des-web-puppeteer-e2e
+        - des-web.rs application
+        - k8s-cluster gateway or GitOps
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Immutable revision
+      description: The 40-hex source SHA tested by GitHub Actions or gha-indie-worker
+    validations:
+      required: true
+  - type: input
+    id: route
+    attributes:
+      label: Route or endpoint
+      placeholder: /des/tools/routing
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Link the Actions run, artifact, worker plan/run, screenshot, trace, or JUnit report. Do not paste credentials or cookies.
+    validations:
+      required: true
