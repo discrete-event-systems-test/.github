@@ -57,3 +57,15 @@ Each suite also publishes a bounded `gha-indie-worker` workflow for planning aga
 ## Public context boundary
 
 This profile and the `.github` repository are intentionally public. They may contain public identifiers, links, acceptance scope, and operating rules. They must not contain credentials, private repository inventories, customer or user data, production test data, private issue content, incident details, unpublished vulnerabilities, or security-sensitive topology.
+
+
+<!-- ore-org-baseline:begin -->
+## Planning and governance
+
+- Canonical Linear project: https://linear.app/denman/project/githubcomdiscrete-event-systems-test-2688194a677b
+- Organization defaults: https://github.com/discrete-event-systems-test/.github
+- Canonical agent policy: https://github.com/discrete-event-systems-test/.github/blob/main/agents.md
+- Security policy: https://github.com/discrete-event-systems-test/.github/security/policy
+
+Repositories in this organization use semantic conflict resolution with 3–10 relevant prior commits when useful, full cross-repository context, pull-request delivery, and a hard automated-agent denylist for destructive or history-rewriting operations.
+<!-- ore-org-baseline:end -->
