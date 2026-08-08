@@ -1,0 +1,22 @@
+{
+  "context_kind": "test_organization_relationships",
+  "declared_relationships": [
+    {
+      "access": "not_implied",
+      "data_boundary": "published_contracts_and_authorized_test_inputs_only",
+      "kind": "black_box_acceptance_governance_for",
+      "source_repository": "discrete-event-systems-test/.github",
+      "target_organization": "discrete-event-systems"
+    }
+  ],
+  "organization": "discrete-event-systems-test",
+  "policies": {
+    "direct_production_database_access": false,
+    "infer_dependencies_from_names": false,
+    "runtime_routing": "forbidden",
+    "unlisted_relationships": "unknown"
+  },
+  "public_context_only": true,
+  "relationship_policy": "explicit_only",
+  "schema_version": 1
+}
