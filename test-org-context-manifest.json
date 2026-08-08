@@ -1,0 +1,14 @@
+{
+  "context_kind": "test_organization_context_manifest",
+  "files": {
+    "ORG_CONTEXT.md": "573a9241640517f75145b2ce571a9645c7a9afb9d9fb81434acd1dfcdf47eff5",
+    "agents/org-context.agent.md": "2f94cf119ee710b5ba95caa35fae8e17bae4b1b8f17f6b667efc561772c9b271",
+    "project-context.yaml": "da746bc1c8bfedd2e008674b9d0603052f1334dc57dd7aeb8b404c5cd2d31421",
+    "repository-relationships.json": "2f732d9fad7cdd60b73143033c9f83270c7242f9d4a5021abc838da9c17f9451"
+  },
+  "github_account_id": 313546124,
+  "github_owner": "discrete-event-systems-test",
+  "registry_ref": "4b9870e419965ea7b7218462b584271163679a14",
+  "registry_sha256": "16e4857ffcc5d0a39f2d4418f2c21ed0d0d2f139def36093cc37baf5b3101296",
+  "schema_version": 1
+}
