@@ -34,7 +34,7 @@ This page is the public orientation point for people and authorized AI agents. R
 - Linear team: `DEN` (`eb8ab169-5afe-4b6f-9cab-3f2aa3e887dc`)
 - Immutable central test-canary registry: [`ORESoftware/ai-agent-coordinator.rs@4b9870e419965ea7b7218462b584271163679a14`](https://github.com/ORESoftware/ai-agent-coordinator.rs/blob/4b9870e419965ea7b7218462b584271163679a14/config/test-org-homepage-canaries.yaml)
 
-The immutable central test-canary registry is authoritative for test identity and the reviewed production-parent link. The production registry remains authoritative for production identity and runtime routing. Repository-local instructions, tests, fixtures, workflows, schemas, and documentation are authoritative for implementation and evidence. This test organization has no default runtime repository or runtime route.
+The reviewed central registry is authoritative for immutable test identity and the reviewed production-parent link; for this canary, that source is the immutable central test-canary registry pinned below. The production registry remains authoritative for production identity and runtime routing. Repository-local instructions, tests, fixtures, workflows, schemas, and documentation are authoritative for implementation and evidence. This test organization has no default runtime repository or runtime route.
 
 ## Browser automation
 
