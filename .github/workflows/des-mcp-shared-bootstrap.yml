@@ -1,0 +1,34 @@
+name: DES MCP shared-bootstrap provenance
+
+on:
+  pull_request:
+    paths:
+      - "contract-tests/des-mcp-server/**"
+      - ".github/workflows/des-mcp-shared-bootstrap.yml"
+  push:
+    branches: [main]
+    paths:
+      - "contract-tests/des-mcp-server/**"
+      - ".github/workflows/des-mcp-shared-bootstrap.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: des-mcp-provenance-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  provenance:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out without credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          show-progress: false
+          submodules: false
+      - name: Validate DES MCP shared-bootstrap provenance
+        run: node contract-tests/des-mcp-server/scripts/validate-shared-bootstrap.mjs
