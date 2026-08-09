@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: discrete-event-systems-test Linear project
+    url: https://linear.app/denman/project/githubcomdiscrete-event-systems-test-2688194a677b
+    about: Roadmap, cross-repository planning, and internal delivery tracking.
+  - name: Security policy
+    url: https://github.com/discrete-event-systems-test/.github/security/policy
+    about: Report vulnerabilities privately; never file public security issues.

@@ -1,0 +1,10 @@
+{
+  "generatedBy": "DEN-957 test-organization provenance harness",
+  "sources": {
+    "discrete-event-systems/des-mcp-server.rs": {
+      "branch": "main",
+      "sha": "fa430d5257e2679c7c732d97503a28ffba18d3f6",
+      "exists": true
+    }
+  }
+}

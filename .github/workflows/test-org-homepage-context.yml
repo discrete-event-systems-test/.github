@@ -1,0 +1,87 @@
+name: Test organization homepage context
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/test-org-homepage-context.yml
+      - AGENTS.md
+      - GOVERNANCE.md
+      - ORG_CONTEXT.md
+      - SECURITY.md
+      - SUPPORT.md
+      - agents/org-context.agent.md
+      - profile/README.md
+      - project-context.yaml
+      - repository-relationships.json
+      - test-org-context-manifest.json
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/test-org-homepage-context.yml
+      - AGENTS.md
+      - GOVERNANCE.md
+      - ORG_CONTEXT.md
+      - SECURITY.md
+      - SUPPORT.md
+      - agents/org-context.agent.md
+      - profile/README.md
+      - project-context.yaml
+      - repository-relationships.json
+      - test-org-context-manifest.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Validate workflow syntax
+        uses: docker://rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667
+        with:
+          args: .github/workflows/test-org-homepage-context.yml
+
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+
+      - name: Verify immutable central context and semantic profile
+        shell: bash
+        env:
+          EXPECTED_OWNER: "discrete-event-systems-test"
+          REGISTRY_REF: "4b9870e419965ea7b7218462b584271163679a14"
+          REGISTRY_REPOSITORY: "ORESoftware/ai-agent-coordinator.rs"
+        run: |
+          set -euo pipefail
+          context_tmp="$(mktemp -d)"
+          trap 'rm -rf "$context_tmp"' EXIT
+          raw_base="https://raw.githubusercontent.com/$REGISTRY_REPOSITORY/$REGISTRY_REF"
+          mkdir -p "$context_tmp/config" "$context_tmp/scripts"
+          for path in \
+            config/test-org-homepage-canaries.yaml \
+            scripts/render_test_org_homepage_context.py \
+            scripts/validate_org_homepage.py \
+            scripts/validate_test_org_homepage_canaries.py \
+            scripts/verify_test_org_homepage_context.py; do
+            curl --fail --silent --show-error --location \
+              --proto '=https' --tlsv1.2 \
+              --retry 3 --retry-all-errors \
+              --connect-timeout 10 --max-time 30 \
+              "$raw_base/$path" --output "$context_tmp/$path"
+          done
+          python3 -m py_compile "$context_tmp"/scripts/*.py
+          python3 "$context_tmp/scripts/verify_test_org_homepage_context.py" \
+            --registry "$context_tmp/config/test-org-homepage-canaries.yaml" \
+            --owner "$EXPECTED_OWNER" \
+            --registry-ref "$REGISTRY_REF" \
+            --bundle-dir .

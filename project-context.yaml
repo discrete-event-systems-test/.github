@@ -1,0 +1,109 @@
+{
+  "authorization": {
+    "private_context_publication": "forbidden",
+    "production_data_access": "not_implied",
+    "repository_access": "not_implied"
+  },
+  "context_kind": "test_organization_acceptance",
+  "generated_from": {
+    "canonical_sha256": "16e4857ffcc5d0a39f2d4418f2c21ed0d0d2f139def36093cc37baf5b3101296",
+    "immutable": true,
+    "path": "config/test-org-homepage-canaries.yaml",
+    "raw_url": "https://raw.githubusercontent.com/ORESoftware/ai-agent-coordinator.rs/4b9870e419965ea7b7218462b584271163679a14/config/test-org-homepage-canaries.yaml",
+    "ref": "4b9870e419965ea7b7218462b584271163679a14",
+    "ref_type": "commit",
+    "repository": "ORESoftware/ai-agent-coordinator.rs",
+    "url": "https://github.com/ORESoftware/ai-agent-coordinator.rs/blob/4b9870e419965ea7b7218462b584271163679a14/config/test-org-homepage-canaries.yaml"
+  },
+  "git_conflict_resolution": {
+    "context_scope": [
+      "test_repository",
+      "parent_production_organization_repositories",
+      "relevant_external_organization_repositories",
+      "linear_project_context",
+      "pull_requests_issues_architecture_decisions_tests_and_docs"
+    ],
+    "directive_verbatim": "resolve any and all git conflicts semantically, will full context, even looking back 3-10 commits in git log history for more context - never hastily pick sides in a conflict but merge things conceptually, using max context and complete conceptual awareness for a given github organization's repos and external org repos too",
+    "forbidden_shortcuts": [
+      "wholesale_ours",
+      "wholesale_theirs",
+      "wholesale_current",
+      "wholesale_incoming"
+    ],
+    "history_lookback_commits": {
+      "inspect_both_sides": true,
+      "inspect_merge_base": true,
+      "maximum": 10,
+      "minimum": 3,
+      "path_scoped_history": true,
+      "when_available": true
+    },
+    "mode": "semantic_conceptual_merge",
+    "required_outcome": "preserve compatible intent, test evidence, schemas, interfaces, documentation, security controls, and operational safeguards"
+  },
+  "github": {
+    "account_id": 313546124,
+    "account_type": "Organization",
+    "github_project_url": "https://github.com/orgs/discrete-event-systems-test/projects/1",
+    "installation_id": 151523623,
+    "login": "discrete-event-systems-test",
+    "repository": "discrete-event-systems-test/.github"
+  },
+  "linear": {
+    "project_id": "abc2c19e-7ec3-458a-a33d-0f8a105de450",
+    "project_name": "github.com/discrete-event-systems-test",
+    "project_url": "https://linear.app/denman/project/githubcomdiscrete-event-systems-test-2688194a677b",
+    "team_id": "eb8ab169-5afe-4b6f-9cab-3f2aa3e887dc",
+    "team_key": "DEN",
+    "team_name": "Denman",
+    "workspace_slug": "denman"
+  },
+  "mirrors": {
+    "bundle_manifest": "test-org-context-manifest.json",
+    "github_custom_agent": "agents/org-context.agent.md",
+    "github_org_context": "ORG_CONTEXT.md",
+    "github_profile": "profile/README.md",
+    "github_project_context": "project-context.yaml",
+    "github_relationships": "repository-relationships.json",
+    "github_repository": "discrete-event-systems-test/.github"
+  },
+  "organization": "discrete-event-systems-test",
+  "parent_production": {
+    "github_account_id": 306297904,
+    "github_login": "discrete-event-systems",
+    "linear_project_id": "b352c0c6-02f5-4a5a-8460-017aedb5352f",
+    "linear_project_name": "github.com/discrete-event-systems",
+    "linear_project_url": "https://linear.app/denman/project/githubcomdiscrete-event-systems-4a3086ae0c45"
+  },
+  "precedence": {
+    "implementation_instructions": "repository_local",
+    "production_identity_and_runtime_routing": "production_registry",
+    "test_identity_and_parent_link": "test_canary_registry"
+  },
+  "public_context_only": true,
+  "relationships": {
+    "inference": "forbidden",
+    "path": "repository-relationships.json"
+  },
+  "resolution": {
+    "login_case_insensitive": true,
+    "on_ambiguous": "reject",
+    "on_unmapped": "reject",
+    "owner_identity_key": "github_account_id",
+    "repository_selection": "explicit_only",
+    "runtime_routing": "forbidden"
+  },
+  "runtime_route": null,
+  "schema_version": 1,
+  "test_program": {
+    "profile_strategy": "preserve_specialized_acceptance_notes",
+    "purpose": "Independent browser and deployment-boundary acceptance organization for Discrete Event Systems.",
+    "scope": [
+      "Playwright and Chromium route contracts",
+      "independent Puppeteer browser evidence",
+      "immutable local server image startup",
+      "deployment and security boundaries",
+      "bounded gha-indie-worker planning contracts"
+    ]
+  }
+}

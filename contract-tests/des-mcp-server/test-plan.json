@@ -1,0 +1,42 @@
+{
+  "generatedBy": "DEN-957 test-organization provenance harness",
+  "schemaVersion": 1,
+  "sourceOrganization": "discrete-event-systems",
+  "testOrganization": "discrete-event-systems-test",
+  "repository": ".github",
+  "profile": "mcp-contract",
+  "description": "DES MCP read/build tools; immutable shared bootstrap; credential-free source provenance",
+  "focus": [
+    "read-only and build-only tools",
+    "immutable shared bootstrap",
+    "telemetry policy delegation",
+    "stdio-safe logging",
+    "source blob provenance"
+  ],
+  "services": [],
+  "matrix": {},
+  "requiredChecks": [
+    "shared-bootstrap-revision",
+    "source-blob-provenance",
+    "stdio-stderr-safety",
+    "credential-scan"
+  ],
+  "sources": [
+    {
+      "fullName": "discrete-event-systems/des-mcp-server.rs",
+      "exists": true,
+      "branch": "main",
+      "sha": "fa430d5257e2679c7c732d97503a28ffba18d3f6",
+      "visibility": "public"
+    }
+  ],
+  "sourceGates": [],
+  "imports": [],
+  "security": {
+    "immutableSourcePins": true,
+    "pullRequestCredentials": false,
+    "leastPrivilege": true,
+    "redactSecretsAndRawMedia": true,
+    "credentialFreeSnapshots": true
+  }
+}
