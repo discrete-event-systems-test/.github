@@ -1,5 +1,19 @@
 # Organization-wide agent instructions
 
+## Test-organization context discovery
+
+1. Read `project-context.yaml`, `repository-relationships.json`, `ORG_CONTEXT.md`, and the exact repository's README and local agent instructions.
+2. Resolve the exact test repository, GitHub issue or pull request, and Linear work item before editing.
+3. Treat `discrete-event-systems` as a black-box production parent through published contracts and separately authorized test inputs only.
+4. Fail closed on missing, unmapped, ambiguous, stale, contradictory, or unauthorized context.
+
+## Test evidence and safety
+
+- Preserve independent Playwright and Puppeteer evidence, immutable source and image pins, bounded worker profiles, and deployment and security boundaries.
+- Missing upstream artifacts, credentials, environments, capacity, or network paths are blocked readiness—not passes and not automatically product defects.
+- Public organization context does not grant access to private repositories, production systems, databases, credentials, or hidden topology.
+- Link substantial work to both Linear and a GitHub issue or pull request.
+
 <!-- ore-org-baseline:begin -->
 These instructions apply to this repository. Repository-local instructions may add stricter requirements, but they must not weaken this baseline.
 
